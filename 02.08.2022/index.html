@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Compiled and minified CSS
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    Compiled and minified JavaScript 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+</head>
+<body>
+    <div id="Edelete">
+        <input type="text" placeholder="#id" name="deleteId" id="deleteId">
+        <button type="submit" id="submit" onclick="edelete();">Удалить</button>
+    </div>
+    <div id="Ecreate">
+        <input type="text" placeholder="#id" name="createId" id="createId">
+        <input type="text" placeholder="author" name="createAuthor" id="createAuthor">
+        <input type="text" placeholder="name" name="createName" id="createName">
+        <input type="text" placeholder="year" name="createYear" id="createYear">
+        <button type="submit" id="submit" onclick="ecreate();">Создать</button>
+    </div>
+    <div id="Eupdate">
+        <input type="text" placeholder="#id" name="updateId" id="updateId">
+        <input type="text" placeholder="author" name="updateAuthor" id="updateAuthor">
+        <input type="text" placeholder="name" name="updateName" id="updateName">
+        <input type="text" placeholder="year" name="updateYear" id="updateYear">
+        <button type="submit" id="submit" onclick="eupdate();">Обновить</button>
+    </div>
+    <div>
+        <input type="text" placeholder="#id" name="readId" id="readId">
+        <button type="submit" id="submit" onclick="eread();">Показать</button>
+    </div>
+    <div>
+        <input type="text" placeholder="author" name="readAuthor" id="readAuthor">
+        <button type="submit" id="submit" onclick="eread();">Показать</button>
+    </div>
+    <div>
+        <input type="text" placeholder="name" name="readName" id="readName">
+        <button type="submit" id="submit" onclick="eread();">Показать</button>
+    </div>
+    <div>
+        <input type="text" placeholder="year" name="readYear" id="readYear">
+        <button type="submit" id="submit" onclick="eread();">Показать</button>
+    </div>
+    <div>
+        <button type="submit" id="submit" onclick="eread();">Показать всё</button>
+    </div>
+    <div id="cards">
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
