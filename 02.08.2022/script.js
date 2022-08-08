@@ -92,7 +92,7 @@ function eread() {
     let author = document.getElementById("readAuthor").value;
     let name = document.getElementById("readName").value;
     let year = document.getElementById("readYear").value;
-    let ind = 0;
+    let ind = -1;
     catalog.forEach(function(book, index) {
         if (book.id == id){
             ind = index
@@ -105,8 +105,16 @@ function eread() {
         }
     })
     let card = document.getElementById("cards");
-    if (ind != 0){
-        card.innerHTML = catalog[ind][id] + '<br>' + catalog[ind][author] + '<br>' + catalog[ind][name] + '<br>' + catalog[ind][year]
+    card.innerHTML = ''
+    if (ind != -1){
+        console.log(catalog[ind].year);
+        card.innerHTML = catalog[ind].id + '<br>' + catalog[ind].author + '<br>' + catalog[ind].name + '<br>' + catalog[ind].year + '<br>'
+        ind = -1;
+    } else if (ind == -1) {
+        catalog.forEach(function(book) {
+            console.log(book.id);
+            card.innerHTML += book.id + '<br>' + book.author + '<br>' + book.name + '<br>' + book.year + '<br>'
+        })
     }
 };
 
