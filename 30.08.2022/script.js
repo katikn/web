@@ -85,16 +85,18 @@ let startx = 400;
 let starty = 800;
 let movey = 0;
 let items = ["red", "green", "blue", "magenta", "yellow", "skyblue", "lime", "purple"];
-function Diagram(arr = [80, 60, 120, 90]) {
+function Diagram(arr = [80, 60, 120, 90, 150]) {
     if (arr.length > 10) {
         arr = arr.slice(-10);
     }
+    ctx.font = '15px Arial'
     maxx = (Math.max(...arr) + 30) * 1;
     for (let i = 0; i <= maxx; i = i + 10) {
         ctx.beginPath();
         ctx.lineWidth = 5;
         ctx.moveTo(startx + 20, starty - movey);
         ctx.lineTo(startx - 20, starty - movey);
+        ctx.fillText(i, startx - 60, starty - movey, 40)
         ctx.stroke();
         movey += 30;
     }
@@ -111,6 +113,7 @@ function Diagram(arr = [80, 60, 120, 90]) {
         ctx.fillStyle = item
         ctx.moveTo(movex + 50, starty);
         ctx.lineTo(movex + 50, starty - elem * 3)
+        ctx.fillText(elem, movex + 67, (starty - elem * 3) - 20)
         ctx.lineTo(movex + 100, starty - elem * 3)
         ctx.lineTo(movex + 100, starty)
         ctx.fill();
