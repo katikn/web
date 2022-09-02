@@ -85,9 +85,9 @@ let startx = 400;
 let starty = 800;
 let movey = 0;
 let items = ["red", "green", "blue", "magenta", "yellow", "skyblue", "lime", "purple"];
-function Diagram(arr = [80, 40, 60, 120]) {
+function Diagram(arr = [80, 60, 120, 90]) {
     if (arr.length > 10) {
-        let arr = arr.slice(-10);
+        arr = arr.slice(-10);
     }
     maxx = (Math.max(...arr) + 30) * 1;
     for (let i = 0; i <= maxx; i = i + 10) {
