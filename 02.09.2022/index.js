@@ -11,8 +11,6 @@ import cordsInCanvas from './test.js'
 
 var canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
-
-ctx.fillRect(20, 20, 120, 120);
 canvas.addEventListener('click', function(e) {
     cordsInCanvas(canvas, ctx, e)  
 })
