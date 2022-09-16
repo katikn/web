@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="script.js" type="module"></script>
+</head>
+
+<body>
+    <canvas width="500" height="650"></canvas>
+    <div id="maindatas">
+        <input id="name" type="text"> <label for="name">Введите имя</label>
+        <input id="lvl" type="number"> <label for="lvl">Введите уровень</label>
+        <input id="img" type="file" accept="image/*"><br>
+        <!-- <input id="img" type="file" accept="image/*, image/jpeg" onchange="donwload(this)"> <label for="img">Выберите аватарку</label> <br> -->
+        <button type="submit" id="submit">Показать карточку</button>
+    </div>
+    <div class="colors">
+        <input id="colorImage" type="text"> <label for="colorImage">Введите цвет шапки</label>
+        <input id="colorName" type="text"> <label for="colorName">Введите цвет имени</label>
+        <input id="colorLvl" type="text"> <label for="colorLvl">Введите цвет уровня</label> <br>
+        <button type="submit" id="submit2">Задать цвета</button>
+    </div>
+    <div class="changes">
+        <div id="1">
+            <input id="changeName" type="text" placeholder="Имя">
+            <button type="submit" id="sub1">Изменить</button>
+        </div>
+        <div id="2">
+            <input id="changeLvl" type="text" placeholder="Уровень">
+            <button type="submit" id="sub2">Изменить</button>
+        </div>
+        <div id="3">
+            <input id="changeImg" type="text" placeholder="Картинка">
+            <button type="submit" id="sub3">Изменить</button>
+        </div>
+        <div id="4">
+            <input id="changeNameColor" type="text" placeholder="Цвет имени">
+            <button type="submit" id="sub4">Изменить</button>
+        </div>
+        <div id="5">
+            <input id="changeLvlColor" type="text" placeholder="Цвет уровня">
+            <button type="submit" id="sub5">Изменить</button>
+        </div>
+        <div id="6">
+            <input id="changeImageColor" type="text" placeholder="Цвет шапки">
+            <button type="submit" id="sub6">Изменить</button>
+        </div>
+    </div>
+</body>
+
+</html>

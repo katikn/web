@@ -1,0 +1,17 @@
+.cards {
+    height: 212px; 
+    width: 303px !important;
+    border: 2px solid rgb(255, 123, 0); 
+    background-color: rgba(240, 188, 128, 0.541);
+    margin: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.first-card {
+    height: 212px; 
+    width: 303px !important;
+    margin: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-image: url('https://media.discordapp.net/attachments/1019453793101946910/1019577806411288586/Frame_2.png') !important;
+}

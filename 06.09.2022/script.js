@@ -96,11 +96,14 @@ let person2 = new Person('Антон', 10);
 console.log(person2);
 
 function Rectangle(width_, height_, posx, posy) {
-    if (width_ < 0 || height_ < 0) {
+    if (width_ < 0) {
         this.width = 0;
-        this.height = 0;
     } else {
         this.width = width_;
+    }
+    if (height_ < 0) {
+        this.height = 0;
+    } else {
         this.height = height_;
     }
     this.posX = posx;
