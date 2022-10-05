@@ -10,29 +10,41 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
+<body class="back">
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper orange lighten-2">
             <a href="#" class="brand-logo center">TaskBoard</a>
         </div>
     </nav>
     <div class="container">
         <div class="row">
-            <div id="div1" class="col s12" style=" border: 1px solid rgb(255, 123, 0); ">
-                <div id="first-card" class="col s3 first-card"></div>
-                <div id="ball" class="col s3 draggable cards"></div>
-                <div id="ball" class="col s3 draggable cards"></div>
-                <div id="ball" class="col s3 draggable cards"></div>
-                <div id="ball" class="col s3 draggable cards"></div>
+            <h4>Current tasks</h4>
+            <div class="col s12 current-tasks"
+                style="background-color: white; min-height: 222px; border-radius: 10px; border: 1px solid rgb(255, 123, 0); ">
+                <a id="first-card" class="col s3 first-card"></a>
+                <div class='col s3 dragg cards'><h4>awdawd</h4><p>qadwawd</p><button class='del'>aw</button><button class='check'>qwd</button></div>
             </div>
-            <div id="div2" class="col s12" style="border: 1px solid rgb(255, 123, 0); ">
-                <div id="ball" class="col s3 draggable cards"></div>
-                <div id="ball" class="col s3 draggable cards"></div>
+            <h4>Completed tasks</h4>
+            <div class="col s12 completed-tasks"
+                style="background-color: white; min-height: 227px; border-radius: 10px; border: 1px solid rgb(255, 123, 0); ">
+            </div>
+        </div>
+        <div class="zatemn" id="zatemn">
+            <div class="window" id="popup1">
+                <div class="window-content">
+                    <button id="popupcard" style="float: right;">X</button>
+                    <h5>New Task</h5> 
+                    <input id="newTitle" type="text" placeholder="Title">
+                    <textarea id="newDescription" cols="10" rows="20" placeholder="Description"></textarea>
+                    <button id="createcard">Создать карточку</button>
+                </div>
             </div>
         </div>
     </div>
