@@ -1,18 +1,21 @@
 const express = require('express');
 const Router = express.Router();
+const controller = require('../services/blogcontroller')
 
+
+const BlogController = new controller();
 class BlogPage {
     constructor(){
-        Router.get('/blog', this.getAllBlogs)
-        Router.get('/blog/:id', this.getBlogPage)
+        Router.get('/', this.getAllBlogs)
+        Router.get('/:id', this.getBlogPage)
     }
 
     async getAllBlogs(req, res){
-        res.send('Все записи')
+        BlogController.allblogs(req, res)
     }
 
     async getBlogPage(req, res){
-        res.send('Запись ' + req.params['id'])
+        BlogController.getblog(req, res)
     }
 }
 
