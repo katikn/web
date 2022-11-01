@@ -15,6 +15,14 @@ class LoginController{
     }
 
     async postpage(req, res){
+        this.users.forEach(elem => {
+            if (req.body.username == elem['name'] && req.body.password == elem['password']){
+                res.send(`${req.body.username} - ${req.body.password}`)
+            }
+            else {
+                res.send('Вы не авторизовались')
+            }
+        })
         
     }
 }
