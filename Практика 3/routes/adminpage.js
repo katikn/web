@@ -6,10 +6,15 @@ const AdminController = new controller()
 class AdminPage {
     constructor(){
         Router.get('/', this.showpage)
+        Router.post('/update', this.updating)
     }
 
     async showpage(req, res){
         AdminController.showpage(req, res)
+    }
+
+    async updating(req, res){
+        AdminController.updating(req, res)
     }
 }
 

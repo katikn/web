@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Админка</h1>
+    <form action="admin/update" method="POST">
+        <table style="border: 2px solid black; width: 100%;">
+            <thead>
+                <tr>
+                    <th align="center">id</th>
+                    <th align="center">title</th>
+                    <th align="center">description</th>
+                    <th align="center">showing on main page</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in main %}
+                <tr>
+                    <td align="center">{{ item._id }}</td>
+                    <td align="center">{{ item.title }}</td>
+                    <td align="center">{{ item.description }}</td>
+                    <td align="center">{% if item.showing %}
+                        <input style="width: 20px; height: 20px; border: 2px solid red;" type="checkbox" id="shows" name="shows"
+                            value="{{ item.title }}" checked disabled/>
+                        <label for="shows">{{ item.showing }}</label>
+                        {% else %}
+                        <input style="width: 20px; height: 20px;" type="checkbox" id="shows" name="shows"
+                            value="{{ item.id }}" />
+                        <label for="shows">{{ item.showing }}</label>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    <br>
+    <button type="submit">Сохранить изменения</button>
+    </form>
+    <br>
+    <button><a href="/">Вернуться на главную</a></button>
+</body>
+
+</html>
