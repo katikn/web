@@ -11,6 +11,14 @@
     <form action="new/creating" method="POST">
         <input type="text" id="title" name="title" placeholder="Title"> <br>
         <textarea type="text" id="desc" name="desc" cols="30" rows="5" placeholder="Description"></textarea> <br>
+        <select id="sortselection" onChange="update()">
+            <option value="" disabled selected>Выбрать категорию: </option>
+            <option value="1">Для детей</option>
+            <option value="2">Работа</option>
+            <option value="3">Природа</option>
+            <option value="4">Путешествия</option>
+            <option value="5">Про Вовочку</option>
+        </select> <br>
         <button type="submit">Войдите</button>
     </form>
 </body>
