@@ -17,6 +17,8 @@ class LoginController{
             }
             allUsers.forEach((admin) =>{
                 if (req.body.username == admin['name'] && req.body.password == admin['password']){
+                    const sess = req.session;
+                    console.log(sess);
                     res.redirect('/admin')
                 } else {
                     res.redirect('/login')

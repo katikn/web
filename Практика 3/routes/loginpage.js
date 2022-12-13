@@ -14,6 +14,8 @@ class LoginPage {
     }
 
     async logging(req, res){
+        const sess = req.session;
+        sess.username = req.body.username;
         LoginController.logging(req, res)
     }
 }

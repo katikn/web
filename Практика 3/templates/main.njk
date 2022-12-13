@@ -20,7 +20,9 @@
         </div>
         <div class="col s2" style="margin-top: 60px;">
             <a class="waves-effect waves-light btn-small" href="/new">Создать анекдот</a>
+            {{if main.sess}}
             <a class="waves-effect waves-light btn-small" href="/login">Авторизация</a>
+            {{endif}}
         </div>
     </div>
     <div class="row">
