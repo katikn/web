@@ -3,6 +3,7 @@ const njk = require('nunjucks');
 const mongoose = require('mongoose');
 const sessions = require('express-session');
 const cookieParser = require('cookie-parser') ;
+const cors = require('cors');
 
 const redisStore = require('connect-redis')(sessions)
 const redis = require('redis')
@@ -10,11 +11,15 @@ const client = redis.createClient({
     legacyMode: true
 });
 const app = express();
+app.use(cors({
+    origin: '*'
+}))
 const bodyParser = require('body-parser');
 const PORT = 3000;
 const oneDay = 1000 * 60 * 60 * 18;
 let session = {}
 
+const isAuth = require('./scripts/isAuth.js')
 const NewAnecdote = require('./routes/newanecdote');
 const LoginPage = require('./routes/loginpage');
 const AdminPage = require('./routes/adminpage');
@@ -42,26 +47,36 @@ app.use(sessions({
 app.use(cookieParser());
 
 app.use((req, res, next) => {
-    // let unauth = ['/']
-    // console.log(req.url);
-    // if (!unauth.includes(req.url) && session.user){
-    //     next()
-    // } else if (unauth.includes(req.url)) {
-    //     next()
-    // } else {
-    //     res.send('Вы не авторизованы')
-    // }
-    next()
+    let unauth = ['/', '/login', '/new', '/login/auth', '/new/creating', '/admin/get_padawans']
+    let session = req.session;
+    console.log(req.url);
+    if (!unauth.includes(req.url) && session.username){
+        next()
+    } else if (unauth.includes(req.url)) {
+        next()
+    } else {
+        res.send('Вы не авторизованы')
+    }
+    // next()
 })
+
+function isAuths(req, res){
+    let session = req.session;
+    return session.username != '' ? { auth: true} : {auth: false};
+}
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
     Anecdotes.find({}, function (err, allAnecdotes) {
-        console.log(req.session);
+        const sess = req.session;
         if (err) {
             console.log(err);
             return res.sendStatus(400);
         }
-        res.render('main.njk', {main: allAnecdotes, sess: req.session});
+        let auth = isAuths(req, res);
+        let data = {main: allAnecdotes, flag: auth}
+        console.log(data.flag['auth'], 1);
+        res.render('main.njk', data);
     })
 })
 app.use('/new', NewAnecdote);

@@ -9,7 +9,8 @@ class NewController{
     }
 
     async createAnecdote(req, res){
-        const anecdote = new Anecdote({title: req.body.title, description: req.body.desc, showing: false})
+        console.log(req.body.sortselection);
+        const anecdote = new Anecdote({title: req.body.title, description: req.body.desc, category: req.body.sortselection, showing: false})
         anecdote.save(function(err){
             if (err){
                 return console.log(err);

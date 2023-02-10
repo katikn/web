@@ -34,6 +34,11 @@ class AdminController {
             res.redirect('/admin')
         })
     }
+
+    async get_padawans(req, res){
+        let a = ['Антон', 'Макс', 'Максим', 'Саша', 'Артём', 'Master']
+        res.json({'test1': a})
+    }
 }
 
 module.exports = AdminController;

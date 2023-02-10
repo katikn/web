@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "polzovatelis",
+  "info": {
+    "singularName": "polzovateli",
+    "pluralName": "polzovatelis",
+    "displayName": "Пользователи"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

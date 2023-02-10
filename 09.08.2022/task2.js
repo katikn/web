@@ -56,5 +56,3 @@ let colors = ["white", "gray"]
 function sortColors(a, b){
     
 }
-
-https://github.com/vlyrdv

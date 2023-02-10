@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
+
 <body>
-    <h1>Напишите новый анекдот!</h1>
-    <form action="new/creating" method="POST">
-        <input type="text" id="title" name="title" placeholder="Title"> <br>
-        <textarea type="text" id="desc" name="desc" cols="30" rows="5" placeholder="Description"></textarea> <br>
-        <select id="sortselection" onChange="update()">
-            <option value="" disabled selected>Выбрать категорию: </option>
-            <option value="1">Для детей</option>
-            <option value="2">Работа</option>
-            <option value="3">Природа</option>
-            <option value="4">Путешествия</option>
-            <option value="5">Про Вовочку</option>
-        </select> <br>
-        <button type="submit">Войдите</button>
-    </form>
+    <div class="row">
+        <div class="row" style="background-color: #df73ff">
+            <div class="col s10">
+                <h4><a href="/">Анекдоты.Da</a></h4>
+            </div>
+            <div class="col s2" style="margin-top: 30px;">
+                <a class="waves-effect waves-light btn-small indigo lighten-2" href="/new">Создать анекдот</a>
+                {% if flag['auth'] %}
+                <a class="waves-effect waves-light btn-small indigo lighten-2" href="/login/logout">Выход</a>
+                {% else %}
+                <a class="waves-effect waves-light btn-small indigo lighten-2" href="/login">Авторизация</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <!-- <div class="container"> -->
+                <h4>Напишите свой анекдот!</h4>
+                <form action="new/creating" method="POST">
+                    <input type="text" id="title" name="title" placeholder="Title"> <br>
+                    <textarea type="text" id="desc" name="desc" cols="30" rows="5" placeholder="Description"></textarea>
+                    <br>
+                    <!-- <select id="sortselection" onChange="update()">
+                        <option value="" disabled selected>Выбрать категорию: </option>
+                        <option value="1">Для детей</option>
+                        <option value="2">Работа</option>
+                        <option value="3">Природа</option>
+                        <option value="4">Путешествия</option>
+                        <option value="5">Про Вовочку</option>
+                    </select> <br> -->
+                    <br>
+                    <button class="waves-effect waves-light btn-small indigo lighten-2" type="submit">Создать!</button>
+                </form>
+            <!-- </div> -->
+        </div>
+    </div>
 </body>
+
 </html>

@@ -5,8 +5,14 @@ class LoginController{
         this.a = 'при'
     }
 
-    async showpage(req, res){
-        res.render('login.njk')
+    async showpage(req, res, a){
+        let b = false
+        if (a != ''){
+            b = true
+        }
+        console.log(a, b);
+        console.log({flag: b});
+        res.render('login.njk', {flag: b})
     }
 
     async logging(req, res){

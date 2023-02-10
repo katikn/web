@@ -1,4 +1,4 @@
-import {Card, TaskCards} from './modules.js'
+import { Card, TaskCards } from './modules.js'
 let cards = new TaskCards()
 
 $("document").ready(function() {

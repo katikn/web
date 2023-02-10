@@ -14,33 +14,46 @@
 </head>
 
 <body>
-    <div class="row">
+    <div class="row" style="background-color: #df73ff">
         <div class="col s10">
-            <h1>Главная страница</h1>
+            <h4><a href="/">Анекдоты.Da</a></h4>
         </div>
-        <div class="col s2" style="margin-top: 60px;">
-            <a class="waves-effect waves-light btn-small" href="/new">Создать анекдот</a>
-            {{if main.sess}}
-            <a class="waves-effect waves-light btn-small" href="/login">Авторизация</a>
-            {{endif}}
+        <div class="col s2" style="margin-top: 30px;">
+            <a class="waves-effect waves-light btn-small indigo lighten-2" href="/new">Создать анекдот</a>
+            {% if flag['auth'] %}
+            <a class="waves-effect waves-light btn-small indigo lighten-2" href="/login/logout">Выход</a>
+            {% else %}
+            <a class="waves-effect waves-light btn-small indigo lighten-2" href="/login">Авторизация</a>
+            {% endif %}
         </div>
     </div>
     <div class="row">
-        <div class="col s9 section">
+        <div class="col s12 section">
             {% for item in main %}
             {% if item.showing %}
-            <div class="col s3">
+            <div class="col s3" style='border: 1px solid #ffffff'>
+                <!-- <img src='https://avatars.dzeninfra.ru/get-zen_doc/4475640/pub_60bf059f52820d0e66e32679_60bf08e22d7aec3dde1cb270/scale_1200' width='90%' height='90%'> -->
                 <h3> {{item.title}} </h3>
-                <p> {{item.description}} </p>
+                <p> {{item.description}} </p> <br> <br> <br>
             </div>
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col s3 section">
-
-        </div>
+        {# <div class="col s3 section">
+            <h5>Хай! Выбери категорию анекдотов:</h5>
+            <p><select id="sortselection" onChange="update()">
+                <option value="" disabled selected>Сортировать по:</option>
+                <option value="1">Для детей</option>
+                <option value="2">Работа</option>
+                <option value="3">Природа</option>
+                <option value="4">Путешествия</option>
+                <option value="5">Про Вовочку</option>
+            </select></p>
+        </div> #}
     </div>
 
 </body>
 
 </html>
+
+<script src='/scripts/category.js'></script>
