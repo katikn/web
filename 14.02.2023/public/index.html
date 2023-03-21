@@ -7,14 +7,46 @@
     integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
-    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-  <p>awdawd</p>
-  <button id="send">Send</button>
+  <div class="chat-frame">
+    <div class="chat">
+      <div class="chat-win">
+        <p>
+          <span class="nick">Admin</span>
+          <span class="text">/tell (nickname) message - написать сообщение в лс</span>
+        </p>
+      </div>
+      <div class="chat-rooms-list">
+        <!-- {# {% if name == '' %}
+        <div class="log">
+          <button><a href="/login">Войти в аккаунт</a></button>
+        </div>
+        {% else %}
+        <div class="log">
+          <button><h5>{{name}}</h5></button>
+        </div>
+        {% endif %}
+        <br> #} -->
+        <div class="log">
+          <input type="text" placeholder="nickname" name="username" id="username">
+          <button id="newuser">Войти в аккаунт</button>
+        </div>
+        <div class="room1">
+          <button id="myroom" class="room-btn">
+            Присоедениться к общей комнате
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="chat-send">
+      <input type="text" id="message">
+      <button id="send">Отправить</button>
+    </div>
+  </div>
 </body>
 
 </html>

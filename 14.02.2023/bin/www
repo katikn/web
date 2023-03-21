@@ -26,10 +26,22 @@ const io = new Server(server, {}) //socket.io
  * Listen on provided port, on all network interfaces.
  */
 io.on("connection", (socket) => { //socket.io {
-  console.log("Кто-то подключился");
+  io.emit("newMsg", {nick: "Admin", text: "Кто-то подключился 🤔"})
   socket.emit("conn", "completed")
-  socket.on("hello", (data) => {
-    console.log(data);
+  socket.on("newMsg", (data) => {
+    if (data.room) {
+      socket.to(data.room)
+        .emit("newMsg", { nick: data.name, text: data.text })
+    }
+    else {
+      socket.broadcast.emit("newMsg", { nick: data.name, text: data.text})
+    }
+  })
+
+  socket.on('joinToRoom', (data) => {
+    console.log(data.id);
+    socket.join(data.id)
+    io.to(data.id).emit("connectToRoom", {text: "Someone connected to the room"})
   })
 }) // }
 

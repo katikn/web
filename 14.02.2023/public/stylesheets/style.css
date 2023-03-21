@@ -1,8 +1,92 @@
 body {
+  background-color: rgb(240, 239, 239);
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+
+.chat-frame {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 2px solid rgb(34, 185, 127);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 4px 6px 0px 10px #b5b8b9a6;
+}
+
+.chat {
+  display: flex;
+  height: 80%;
+  justify-content: space-between;
+}
+
+.chat-win {
+  width: 80%;
+  height: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.chat-rooms-list {
+  padding: 20px;
+  margin: 10px 10px;
+  border-radius: 8px;
+  background-color: rgba(86, 156, 104, 0.247);
+}
+
+.chat-rooms-list div {
+  margin: 5px auto;
+}
+
+.chat-rooms-list button {
+  border: none;
+  border-radius: 10px;
+  background-color: azure;
+  padding: 10px 20px;
+}
+
+.chat-win>p {
+  display: flex;
+  align-items: start;
+}
+
+.nick {
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.chat-send {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-send>input {
+  width: 85%;
+  height: 100%;
+  font-size: 18px;
+  line-height: 18px;
+  border: 1px solid rgb(34, 185, 127);
+  border-radius: 4px;
+}
+
+.chat-send>button {
+  width: 10%;
+  height: 100%;
+  font-size: 24px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(150, 194, 163, 0.459);
 }
